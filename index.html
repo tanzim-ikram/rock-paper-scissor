@@ -22,7 +22,7 @@
             return humanChoice.toLowerCase();
         }
 
-        function playRound(humanChoice, computerChoice) {
+        function playGame(humanChoice, computerChoice) {
             let selectionValue;
             let result;
 
@@ -74,23 +74,32 @@
                 humanScore++;
                 
             }
-            return result;
+            return result + "\n" + "Human Score: " + humanScore + " | " + "Computer Score: " + computerScore;
         }
 
-        // console.log(getComputerChoice());
-        // console.log(getHumanChoice());
-        // console.log(typeof(getHumanChoice()));
+        function result () {
+            if (humanScore > computerScore) {
+                return "Game Over!" + "\n" + "You win! Your total score: " + humanScore;
+            }
+            else {
+                return "Game Over!" + "\n" + "You lose! Computer's total score: " + computerScore;
+            }
+        }
 
+        
         let humanScore = 0;
         let computerScore = 0;
 
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
+        for (let i = 0; i < 5; i++) {
 
-        console.log(playRound(humanSelection, computerSelection));
-        console.log("Human Score: " + humanScore + " | " + "Computer Score: " + computerScore);
+            const humanSelection = getHumanChoice();
+            const computerSelection = getComputerChoice();
 
+            console.log(playGame(humanSelection, computerSelection));
+        }
         
+        console.log(result ());
+
     </script>
 </body>
 </html>
