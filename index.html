@@ -7,7 +7,17 @@
 </head>
 <body>
     <script>
-        
+
+        function getComputerChoice() {
+            const randomInt = function (max) {
+                return Math.floor(Math.random() * max)
+            };
+
+            let pcChoice = randomInt(3);
+            return pcChoice;
+        }
+
+        console.log(getComputerChoice());
     </script>
 </body>
 </html>
