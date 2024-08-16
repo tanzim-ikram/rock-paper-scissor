@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: ghostwhite;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    min-height: 50vh;
+    padding: 10rem;
+}
+
+.heading, .emojis {
+    font-size: 36px;
+}
+
+button {
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 8px 40px;
+    border-radius: 8px;
+    background-color: rgb(47, 144, 255);
+    border: 1px solid black;
+    color: white;
+}
+
+button:hover {
+    background-color: rgb(87, 163, 250);
+}
