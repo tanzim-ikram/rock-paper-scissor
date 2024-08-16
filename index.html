@@ -17,7 +17,16 @@
             return pcChoice;
         }
 
+        function getHumanChoice() {
+            let userChoice = Number(prompt("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors."));
+            return userChoice;
+        }
+
         console.log(getComputerChoice());
+        console.log(getHumanChoice());
+        console.log(typeof(getHumanChoice()));
+
+        
     </script>
 </body>
 </html>
