@@ -5,19 +5,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, Paper, Scissors</title>
-    <script src="script.js"></script> 
+    <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
 </head>
 
 <body>
     <div class="container">
         <h1 class="heading">Rock, Paper, Scissors Game</h1>
-        <div class="emojis">
+        <!-- <div class="emojis">
             🪨 📃 ✂️
-        </div>
+        </div> -->
         <button id="play-btn">Start Game</button>
     </div>
-    
+
+    <div class="updates-container">
+        <p class="turns">Turns Left: <span>5</span></p>
+        <h3 class="round-update">You Win!</h3>
+        <p class="human-choice">You Choose:</p>
+        <p class="computer-choice">Computer Chooses:</p>
+    </div>
+
+    <div class="icon-container">
+        <button id="rock" class="btn">🪨</button>
+        <button id="paper" class="btn">📃</button>
+        <button id="scissors" class="btn">✂️</button>
+    </div>
+
+    <div class="scoreboard-container">
+        <h3 class="title">Score Board</h3>
+        <div class="score">
+            <p class="human-score">Your Score:</p>
+            <p class="computer score">Computer Score:</p>
+        </div>
+    </div>
+
+    <footer>
+        <p class="copyright-text">
+            Copyright &copy; TOP 2024 | Developed by <a target="_blank" href="https://tanzim-ikram.github.io/cv/">Tanzim
+                Ikram Sheikh</a>
+        </p>
+    </footer>
+
 </body>
 
 </html>
