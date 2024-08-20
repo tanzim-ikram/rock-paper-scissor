@@ -11,14 +11,25 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
 .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    min-height: 50vh;
-    padding: 10rem;
+    padding: 20px;
 }
 
 .emojis {
@@ -30,17 +41,78 @@ body {
     font-size: 74px;
 }
 
-button {
+#play-btn {
     font-size: 24px;
     font-weight: bold;
     cursor: pointer;
     padding: 8px 40px;
     border-radius: 8px;
-    background-color: rgb(47, 144, 255);
+    background-color:#66bb6a;
     border: 1px solid black;
     color: white;
 }
 
-button:hover {
-    background-color: rgb(87, 163, 250);
+#play-btn:hover {
+    background-color: #81c784;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+#rock {
+    font-size: 86px;
+} 
+
+.btn {
+    font-size: 75px;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 15px;
+    transition-duration: 0.4s;
+    background-color: #42a5f5;
+    border: 1px solid black;
+}
+
+.btn:hover {
+    background-color: #64b5f6;
+}
+
+.updates-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+.scoreboard-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.copyright-text {
+    color: #343434;
+}
+
+footer {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #343434;
 }
