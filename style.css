@@ -111,6 +111,7 @@ a:visited {
 }
 
 div.score-content {
+    background-color: #d6eaf8;
     margin-top: 10px;
     height: 100px;
     width: 35%;
