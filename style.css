@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -19,8 +21,13 @@ body {
     padding: 10rem;
 }
 
-.heading, .emojis {
-    font-size: 36px;
+.emojis {
+    font-size: 42px;
+}
+
+.heading {
+    font-family: "Jersey 10", sans-serif;
+    font-size: 74px;
 }
 
 button {
