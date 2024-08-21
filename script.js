@@ -1,92 +1,101 @@
-document.addEventListener('DOMContentLoaded', function() {
-    function getComputerChoice() {
-        const randomInt = function (max) {
-            return Math.floor(Math.random() * max);
-        };
+const options = ['rock', 'paper', 'scissors'];
+const numOfTurnsDisplay = document.querySelector("#numOfTurns");
+const humanChoiceDisplay = document.querySelector(".human-choice");
+const computerChoiceDisplay = document.querySelector(".computer-choice");
+const humanScoreDisplay = document.querySelector("#human-score");
+const computerScoreDisplay = document.querySelector("#computer-score");
+const roundResultDisplay = document.querySelector(".round-update");
 
-        let computerChoice = randomInt(3);
-        return computerChoice;
-    }
+const startButton = document.querySelector("#start-btn");
+const rockButton = document.querySelector("#rock");
+const paperButton = document.querySelector("#paper");
+const scissorsButton = document.querySelector("#scissors");
+// const resetBtn = document.querySelector();
 
-    function getHumanChoice() {
-        let humanChoice = prompt("What do you choose? Rock, Paper or Scissors?");
-        return humanChoice.toLowerCase();
-    }
+rockButton.disabled = true;
+paperButton.disabled = true;
+scissorsButton.disabled = true;
 
-    function result(humanScore, computerScore) {
-        if (humanScore > computerScore) {
-            return "Game Over!" + "\n" + "You win! Your total score: " + humanScore;
-        }
-        else if (humanScore === computerScore) {
-            return "Game Over!" + "\n" + "It's a draw!" + " Human Score: " + humanScore + " | " + "Computer Score: " + computerScore;
-        }
+let turns = 5
+let humanScore = 0;
+let computerScore = 0;
+
+function startGame() {
+    rockButton.disabled = false;
+    paperButton.disabled = false;
+    scissorsButton.disabled = false;
+
+    startButton.textContent = 'Reset';
+    startButton.classList.add('reset-button');
+
+    startButton.removeEventListener('click', startGame);
+    startButton.addEventListener('click', resetGame);
+}
+
+function playRound(humanChoice){
+
+    const computerChoice = options[Math.floor(Math.random() * 3)];
+    let result = "";
+
+    
+    if (turns != 1){
+        if (humanChoice === computerChoice){
+            result = "IT'S A TIE!";
+            turns--
+        } 
+        else if (humanChoice === 'rock' && computerChoice === 'scissors'){
+            result = "YOU WIN!";
+            humanScore++;
+            turns--
+        } 
+        else if (humanChoice === 'paper' && computerChoice === 'rock'){
+            result = "YOU WIN!";
+            humanScore++;
+            turns--
+        } 
+        else if (humanChoice === 'scissors' && computerChoice === 'paper'){
+            result = "YOU WIN!";
+            humanScore++;
+            turns--
+        } 
         else {
-            return "Game Over!" + "\n" + "You lose! Computer's total score: " + computerScore;
+            result = "YOU LOSE!";
+            computerScore++
+            turns--
+        }
+
+        humanChoiceDisplay.textContent = humanChoice.toUpperCase();
+        computerChoiceDisplay.textContent = computerChoice.toUpperCase();
+        computerScoreDisplay.textContent = computerScore;
+        humanScoreDisplay.textContent = humanScore;
+        numOfTurnsDisplay.textContent = turns;
+        roundResultDisplay.textContent = result;
+    } 
+    else {
+        turns--
+        if (humanScore == computerScore){
+            alert("NOBODY WON. IT'S A TIE!");
+            reset();
+        } 
+        else if (humanScore > computerScore){
+            alert("YAY! YOU WON!!\n" + `Human: ${humanScore}, Computer: ${computerScore}`);
+            reset();
+        } 
+        else {
+            alert("YOU LOST! BETTER LUCK NEXT TIME.\n" + `Human: ${humanScore}, Computer: ${computerScore}`);
+            reset();
         }
     }
+};
 
-    function playGame(round) {
-        let humanScore = 0;
-        let computerScore = 0;
-
-        function playRound(humanChoice, computerChoice) {
-            let selectionValue;
-            let result;
-
-            if (humanChoice === "rock") {
-                selectionValue = 0;
-            }
-            else if (humanChoice === "paper") {
-                selectionValue = 1;
-            }
-            else if (humanChoice === "scissors") {
-                selectionValue = 2;
-            }
-            else {
-                selectionValue = NaN;
-            }
-
-            if (selectionValue === computerChoice) {
-                result = "It's a draw!";
-            }
-            else if ((selectionValue === 0) && (computerChoice === 1)) {
-                result = "You lose! Paper beats Rock.";
-                computerScore++;
-            }
-            else if ((selectionValue === 0) && (computerChoice === 2)) {
-                result = "You win! Rock beats Scissors.";
-                humanScore++;
-            }
-            else if ((selectionValue === 1) && (computerChoice === 0)) {
-                result = "You win! Paper beats Rock.";
-                humanScore++;
-            }
-            else if ((selectionValue === 1) && (computerChoice === 2)) {
-                result = "You lose! Scissors beats Paper.";
-                computerScore++;
-            }
-            else if ((selectionValue === 2) && (computerChoice === 0)) {
-                result = "You lose! Rock beats Scissors.";
-                computerScore++;
-            }
-            else if ((selectionValue === 2) && (computerChoice === 1)) {
-                result = "You win! Scissors beats Paper.";
-                humanScore++;
-            }
-            return result + "\n" + "Human Score: " + humanScore + " | " + "Computer Score: " + computerScore;
-        }
-
-        for (let i = 0; i < round; i++) {
-            const humanSelection = getHumanChoice();
-            const computerSelection = getComputerChoice();
-
-            console.log(playRound(humanSelection, computerSelection));
-        }
-
-        console.log(result(humanScore, computerScore));
-    }
-
-    document.getElementById('play-btn').addEventListener('click', function() {
-        playGame(5);
-    });
-});
+function resetGame(){
+    turns = 5
+    humanScore = 0
+    computerScore = 0
+    humanChoiceDisplay.textContent = " ";
+    computerChoiceDisplay.textContent = " ";
+    computerScoreDisplay.textContent = 0;
+    humanScoreDisplay.textContent = 0;
+    numOfTurnsDisplay.textContent = "5";
+    resultDisplay.textContent = "...";
+};
