@@ -5,14 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, Paper, Scissors</title>
-    <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="container">
         <h1 class="heading">Rock, Paper, Scissors Game</h1>
-        <button id="play-btn">Start Game</button>
+        <button id="start-btn">Start Game</button>
     </div>
 
     <div class="scoreboard-container">
@@ -20,19 +19,19 @@
         <div class="score-content">
             <div class="human">
                 <p class="human-score-text">Your Score</p>
-                <span class="score">0</span>
+                <span id="human-score" class="score">0</span>
             </div>
             <span class="v-bar">|</span>
             <div class="computer">
                 <p class="computer-score-text">Computer Score</p>
-                <span class="score">0</span>
+                <span id="computer-score" class="score">0</span>
             </div>
             
         </div>
     </div>
 
     <div class="updates-container">
-        <p class="turns">Turns Left: <span>5</span></p>
+        <p class="turns">Turns Left: <span id="numOfTurns">5</span></p>
         <h3 class="round-update">You Win!</h3>
         <p class="human-choice">You Choose:</p>
         <p class="computer-choice">Computer Chooses:</p>
@@ -50,6 +49,8 @@
                 Ikram Sheikh</a>
         </p>
     </footer>
+
+    <script src="script.js"></script>
 
 </body>
 
