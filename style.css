@@ -33,16 +33,12 @@ a:visited {
     padding: 20px;
 }
 
-/* .emojis {
-    font-size: 42px;
-} */
-
 .heading {
     font-family: "Jersey 10", sans-serif;
     font-size: 74px;
 }
 
-#play-btn {
+#start-btn {
     font-size: 24px;
     font-weight: bold;
     cursor: pointer;
@@ -53,8 +49,23 @@ a:visited {
     color: white;
 }
 
-#play-btn:hover {
+#start-btn:hover {
     background-color: #81c784;
+}
+
+.reset-button {
+    background-color:#ff1a1a;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 8px 40px;
+    border-radius: 8px;
+    border: 1px solid black;
+    color: white;
+}
+
+.reset-button:hover {
+    background-color:#ff4d4d;
 }
 
 .icon-container {
@@ -132,15 +143,10 @@ div.score-content {
     font-size: 34px;
 }
 
-/* .score-content p {
-
-} */
-
 span.score {
     font-size: 34px;
     font-weight: bolder;
 }
-
 
 .copyright-text {
     color: #343434;
